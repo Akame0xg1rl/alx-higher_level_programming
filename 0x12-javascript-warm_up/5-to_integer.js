@@ -7,4 +7,3 @@ if (!isNaN(firstArg)) {
 } else {
   console.log('Not a number');
 }
-

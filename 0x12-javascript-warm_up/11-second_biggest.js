@@ -9,4 +9,3 @@ if (args.length <= 1) {
   const secondMax = Math.max(...args.filter(n => n !== max));
   console.log(secondMax);
 }
-

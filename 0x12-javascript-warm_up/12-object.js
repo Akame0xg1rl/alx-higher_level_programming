@@ -4,9 +4,5 @@ const myObject = {
   value: 12
 };
 console.log(myObject);
-
-// Update the value property
 myObject.value = 89;
-
 console.log(myObject);
-

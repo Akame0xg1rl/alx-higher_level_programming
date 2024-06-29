@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists states"""
+"""Lists all cities from the database hbtn_0e_4_usa"""
 
 import MySQLdb
 from sys import argv

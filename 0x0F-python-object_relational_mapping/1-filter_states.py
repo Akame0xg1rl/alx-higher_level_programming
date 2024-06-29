@@ -1,26 +1,17 @@
-import mysql.connector
+#!/usr/bin/python3
+"""Lists states"""
 
-# Ensure you provide the correct parameters to connect via TCP/IP
-try:
-    conn = mysql.connector.connect(
-        host="localhost",  # Replace with your host, if different
-        user="root",
-        password="komi",  # Replace with your actual root password
-        database="your_database"   # Replace with the database you want to connect to
-    )
+import MySQLdb
+from sys import argv
 
-    cursor = conn.cursor()
-
-    # Example query: fetch all states from a 'states' table
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    rows = cursor.fetchall()
-
-    for row in rows:
-        print(row)
-
-    cursor.close()
+if __name__ == "__main__":
+    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3], charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        if row[1].startswith("N"):
+            print(row)
+    cur.close()
     conn.close()
-
-except mysql.connector.Error as e:
-    print(f"Error connecting to MySQL: {e}")
-

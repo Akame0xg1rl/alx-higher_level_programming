@@ -1,5 +1,3 @@
 #!/bin/bash
-
-# Send a PUT request to 0.0.0.0:5000/catch_me and display the body of the response
-curl -sLX PUT -d "user_id=98" -H "Origin: HolbertonSchool" 0.0.0.0:5000/catch_me
-
+# Makes a request to 0.0.0.0:5000/catch_me that gets the message "You got me!".
+curl -sL -X PUT -H "Origin: School" -d "user_id=98" 0.0.0.0:5000/catch_me
